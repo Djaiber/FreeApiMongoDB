@@ -49,7 +49,7 @@ This project consumes a free API about meals and recipes, storing their attribut
 
 2. Install dependencies:
     ```bash
-    npm install
+    npm install Express Mongoose node-fetch
     ```
 
 3. Create a `.env` file and add your MongoDB Atlas connection string:
