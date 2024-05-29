@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const mealList = document.getElementById('meal');
     const mealDetailsContent = document.querySelector('.meal-details-content');
     const recipeCloseBtn = document.getElementById('recipe-close-btn');
-
+    
     // Event listeners
     searchBtn.addEventListener('click', getMealList);
     mealList.addEventListener('click', getMealRecipe);
@@ -49,24 +49,28 @@ document.addEventListener('DOMContentLoaded', () => {
             let mealItem = e.target.parentElement.parentElement;
             fetch(`/get-recipe?id=${mealItem.dataset.id}`)
             .then(response => response.json())
-            .then(data => mealRecipeModal(data));
+            .then(data => {
+                console.log("Received Meal Data:", data); // Log data
+                mealRecipeModal(data);
+            });
         }
     }
 
     async function mealRecipeModal(meal) {
         try {
+            console.log("Meal in Modal:", meal); // Log meal data
             let html = `
-                <h2 class="recipe-title">${meal.strMeal}</h2>
-                <p class="recipe-category">${meal.strCategory}</p>
+                <h2 class="recipe-title">${meal[0].strMeal}</h2>
+                <p class="recipe-category">${meal[0].strCategory}</p>
                 <div class="recipe-instruct">
                     <h3>Instructions:</h3>
-                    <p>${meal.strInstructions}</p>
+                    <p>${meal[0].strInstructions}</p>
                 </div>
                 <div class="recipe-meal-img">
-                    <img src="${meal.strMealThumb}" alt="">
+                    <img src="${meal[0].strMealThumb}" alt="">
                 </div>
                 <div class="recipe-link">
-                    <a href="${meal.strYoutube}" target="_blank">Watch Video</a>
+                    <a href="${meal[0].strYoutube}" target="_blank">Watch Video</a>
                 </div>
             `;
             mealDetailsContent.innerHTML = html;

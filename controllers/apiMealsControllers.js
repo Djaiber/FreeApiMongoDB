@@ -33,20 +33,4 @@ const getMeals = async (req, res) => {
     }
 };
 
-const getRecipe = async (req, res) => {
-    let mealId = req.query.id;
-
-    try {
-        const response = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`);
-        const data = await response.json();
-        res.json(data.meals[0]);
-    } catch (error) {
-        console.error("Error fetching meal recipe:", error);
-        res.status(500).send("Internal Server Error");
-    }
-};
-
-module.exports = {
-    getMeals,
-    getRecipe
-};
+module.exports = getMeals;
