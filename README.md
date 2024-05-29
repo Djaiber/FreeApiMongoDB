@@ -19,42 +19,51 @@ This project consumes a free API about meals and recipes, storing their attribut
 
 ## Project Structure
 
-├── controllers
-│ ├── apiMealControllers.js
-│ ├── apiRecipeControllers.js
-├── models
-│ ├── mealModel.js
-│ ├── recipeModel.js
-├── routes
-│ ├── apiRoutes.js
-├── app.js
-└── README.md
+controllers
+    apiMealControllers.js
+    apiRecipeControllers.js
+models
+    mealModel.js
+    recipeModel.js
+routes
+    apiRoutes.js
+app.js
+README.md
+
 ## Setup
-Clone the repository
 
-bash
-git clone https://github.com/your-username/your-repo-name.git
-cd your-repo-name
-Install dependencies
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/your-username/your-repo-name.git
+    cd your-repo-name
+    ```
 
-bash
+2. Install dependencies:
+    ```bash
+    npm install
+    ```
 
-npm install
-Create a .env file and add your MongoDB Atlas connection string
+3. Create a `.env` file and add your MongoDB Atlas connection string:
+    ```env
+    MONGODB_URI=your-mongodb-atlas-connection-string
+    ```
 
-env
-Copy code
-MONGODB_URI=your-mongodb-atlas-connection-string
-Start the application
+4. Start the application:
+    ```bash
+    npm start
+    ```
 
-bash
-Copy code
-npm start
 ## Usage
-Fetch Meals
-Send a GET request to /get-meals?ingredient=<ingredient-name>
 
-Fetch Recipe
-Send a GET request to /get-recipe?id=<meal-id>
+### Fetch Meals
+
+Send a GET request to `/get-meals?ingredient=<ingredient-name>`
+
+### Fetch Recipe
+
+Send a GET request to `/get-recipe?id=<meal-id>`
+
 ## License
+
 GNU General Public License v3.0
+
