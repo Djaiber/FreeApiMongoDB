@@ -19,16 +19,25 @@ This project consumes a free API about meals and recipes, storing their attribut
 
 ## Project Structure
 
-controllers
-    apiMealControllers.js
-    apiRecipeControllers.js
-models
-    mealModel.js
-    recipeModel.js
-routes
-    apiRoutes.js
-app.js
-README.md
+* **.gitignore**
+* **LICENSE**
+* **package.json**
+* **package-lock.json**
+* **README.md**
+* **server.js**
+* **config/**
+    * conexionDB.js
+* **controllers/**
+    * apiMealsControllers.js
+    * apiRecipeControllers.js
+* **public/**
+    * index.html
+    * script.js
+    * style.css
+* **routes/**
+    * apiMealsRouter.js
+* **node_modules/**
+
 
 ## Setup
 
@@ -50,7 +59,7 @@ README.md
 
 4. Start the application:
     ```bash
-    npm start
+    node server.js
     ```
 
 ## Usage
